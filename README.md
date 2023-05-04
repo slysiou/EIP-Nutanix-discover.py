@@ -19,7 +19,7 @@ like:
 [nutanix]
 user=admin
 password=pass
-url=https://10.10.10.10:9440/api/nutanix/v3
+url=https://prism.local:9440/api/nutanix/v3
 
 [eip]
 uuid=DBCDFED3-994D-4F51-9605-C5799DD5B929
