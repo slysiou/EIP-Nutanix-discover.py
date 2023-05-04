@@ -1,4 +1,4 @@
-# Cloud Observer external plugin for Nutanix
+# EfficientIP Cloud Observer external plugin for Nutanix
 
 Get information from Prism Element or Prism Central and generate data file for EfficientIP Cloud Observer.
 
@@ -43,3 +43,17 @@ Network name is based on Nutanix Subnet defined on the cluster.
 
 Each VM Network interface has 1 Mac address, multiple IP addresses connected to 1 Network.
 
+## Installation
+
+- Install python3
+- Create an environment and activate it ([venv documentation](https://docs.python.org/fr/3/library/venv.html))
+- Install required packages
+```sh
+pip install -r requirements.txt
+````
+
+## Run the script
+
+```sh
+python main.py
+```
