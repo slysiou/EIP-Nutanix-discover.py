@@ -12,7 +12,7 @@ Swagger in also available on Prism UI. By default v2 is presented. Change URL to
 
 ## config.ini
 
-Use the sample file to start a `config.ini`.
+Use the sample file to create a `config.ini`.
 
 like:
 ```ini
@@ -29,7 +29,7 @@ uuid=DBCDFED3-994D-4F51-9605-C5799DD5B929
 
 ### Folder
 
-Folder name is based on cluster name
+Folder name is based on cluster name.
 
 ### Instance
 
@@ -47,7 +47,7 @@ Each VM Network interface has 1 Mac address, multiple IP addresses connected to 
 
 - Install python3
 - Create an environment and activate it ([venv documentation](https://docs.python.org/fr/3/library/venv.html))
-- Install required packages
+- Install required packages with:
 ```sh
 pip install -r requirements.txt
 ````
