@@ -7,6 +7,7 @@ from base64 import b64encode
 import configparser
 import time
 from datetime import datetime, timedelta
+import os
 
 start_time = datetime.now()
 
@@ -130,7 +131,7 @@ output.append(
 )
 
 file = open(
-    f"{config['eip']['uuid']}.{ts}.json", "w")
+    f"{config['eip']['uuid']}.{ts}", "w")
 for l in output:
     file.write(json.dumps(l))
     file.write("\n")
@@ -138,5 +139,18 @@ file.close()
 
 # End
 end_time = datetime.now()
-print(f'\nScript complete, total runtime {end_time - start_time}')
+print(f'Generation completed, total runtime {end_time - start_time}')
 
+# Send file
+print("Start sending...")
+print('scp %s.%s %s@%s:%s' % 
+                 (config['eip']['uuid'],ts, config['eip']['user'], config['eip']['ip'], config['eip']['path']) )
+exec = os.system('scp %s.%s %s@%s:%s' % 
+                 (config['eip']['uuid'],ts, config['eip']['user'], config['eip']['ip'], config['eip']['path']) )
+
+if (exec == 0):
+    print(f'File sent!')
+else:
+    print("Error sending file")
+
+os.unlink('%s.%s' % ((config['eip']['uuid'],ts)))
