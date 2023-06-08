@@ -23,6 +23,9 @@ url=https://prism.local:9440/api/nutanix/v3
 
 [eip]
 uuid=DBCDFED3-994D-4F51-9605-C5799DD5B929
+EIP_IP=10.10.10.1
+EIP_USER=cloudobserver
+EIP_PATH=/home/cloudobserver
 ```
 
 ## Objects imported
