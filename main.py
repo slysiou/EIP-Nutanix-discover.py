@@ -23,7 +23,7 @@ password = config['nutanix']['password']
 encoded_credentials = b64encode(bytes(f'{username}:{password}',
 encoding='ascii')).decode('ascii')
 auth_header = f'Basic {encoded_credentials}'
-payload = '{}'
+payload = '{ "length": 2000 }'
 headers = {
     'Accept': 'application/json', 
     'Content-Type': 'application/json',
