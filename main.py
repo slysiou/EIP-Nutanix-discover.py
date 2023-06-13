@@ -45,11 +45,12 @@ verify=False)
 if response.status_code == 200:
     entities = response.json()['entities']
     for ent in entities:
-        folder = { 'type':  'folder', 'status': 'ok'}
-        folder['id'] = ent["metadata"]['uuid'] 
-        folder['name'] = ent["spec"]['name']
-        output.append(folder)
-        # print(json.dumps(ent['status'], indent=1))
+        if ent["spec"]['name'] != 'Unnamed':
+            folder = { 'type':  'folder', 'status': 'ok'}
+            folder['id'] = ent["metadata"]['uuid'] 
+            folder['name'] = ent["spec"]['name']
+            output.append(folder)
+            # print(json.dumps(ent['status'], indent=1))
 else:
     print("Error: can't find folders")
     exit()
